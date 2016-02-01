@@ -6,8 +6,9 @@ Styling for Javascript
 - All javascript
 - Autoprefixing
 - Chained selectors
-- Injects CSS into webpage
-- Works with React!
+- Uses real CSS, either injected or preloaded
+- Works with React, both on server and client
+- Built in HMR
 
 ## How to use
 
