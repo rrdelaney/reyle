@@ -1,13 +1,13 @@
 # Usage in browser
 
-Using Relye in the browser is also very easy, without any library For
+Using Reyle in the browser is also very easy, without any library For
 example, given the HTML file and these scripts:
 
 ```html
 <html>
   <body>
     <div id="root"></div>
-    <script src="relye.js"></script>
+    <script src="reyle.js"></script>
     <script src="button.js"></script>
   </body>
 </html>

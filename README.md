@@ -13,8 +13,8 @@ Styling for Javascript
 ## How to use
 
 ```js
-import { StyleSheet } from 'relye'
-import { loadIntoDOM } from 'relye/dom'
+import { StyleSheet } from 'reyle'
+import { loadIntoDOM } from 'reyle/dom'
 
 const styles = Stylesheet.create({
   myClass: {
@@ -60,11 +60,11 @@ This creates this stylesheet in the browser. The identifiers will be different t
 
 ## Usage with React
 
-Relye provides a nice helper to use with React
+Reyle provides a nice helper to use with React
 
 ```js
 import React, { Component } from 'react'
-import { applyStyles } from 'relye/react'
+import { applyStyles } from 'reyle/react'
 
 class MyComponent extends Component {
   // ...

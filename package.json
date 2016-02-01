@@ -1,5 +1,5 @@
 {
-  "name": "relye",
+  "name": "reyle",
   "version": "0.0.0",
   "description": "Managing styles in style",
   "main": "index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rrdelaney/relye.git"
+    "url": "https://github.com/rrdelaney/reyle.git"
   },
   "keywords": [
     "style",
@@ -30,9 +30,9 @@
   "author": "Ryan Delaney <rrdelaney@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rrdelaney/relye/issues"
+    "url": "https://github.com/rrdelaney/reyle/issues"
   },
-  "homepage": "https://github.com/rrdelaney/relye",
+  "homepage": "https://github.com/rrdelaney/reyle",
   "standard": {
     "parser": "babel-eslint"
   }
