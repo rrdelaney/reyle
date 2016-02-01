@@ -1,0 +1,31 @@
+{
+  "name": "relye",
+  "version": "0.0.0",
+  "description": "Managing styles in style",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13"
+  },
+  "scripts": {
+    "build": "babel src -d target",
+    "prepublish": "babel src -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rrdelaney/relye.git"
+  },
+  "keywords": [
+    "style",
+    "react",
+    "stylesheet"
+  ],
+  "author": "Ryan Delaney <rrdelaney@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rrdelaney/relye/issues"
+  },
+  "homepage": "https://github.com/rrdelaney/relye"
+}
