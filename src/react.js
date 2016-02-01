@@ -1,6 +1,7 @@
 import { StyleSheet } from './StyleSheet'
+import { loadIntoDOM, removeFromDOM } from './dom'
 
-export function apply (styles) {
+export function applyStyles (styles) {
   return component => {
     const identifier = component.name || '_' + Object.keys(styles).join('_')
     const classNames = StyleSheet.create(styles, identifier)
@@ -10,8 +11,8 @@ export function apply (styles) {
 
     if (module && module.hot) {
       module.hot.accept()
-      Stylesheet.removeStyles()
-      Stylesheet.loadIntoDOM()
+      removeStyles(StyleSheet)
+      loadIntoDOM(StyleSheet)
     }
   }
 }

@@ -7,11 +7,13 @@ Styling for Javascript!
 - Autoprefixing
 - Chained selectors
 - Injects CSS into webpage
+- Works with React!
 
 ## How to use
 
 ```js
-import { Stylesheet } from 'stylesheet'
+import { StyleSheet } from 'relye'
+import { loadIntoDOM } from 'relye/dom'
 
 const styles = Stylesheet.create({
   myClass: {
@@ -19,7 +21,7 @@ const styles = Stylesheet.create({
     backgroundColor: 'blue',
     ':hover': {
       backgroundColor: 'green'
-    } 
+    }
   },
   otherClass: {
     margin: '.5rem',
@@ -31,10 +33,10 @@ const styles = Stylesheet.create({
 
 console.log(styles) // { myClass: '_0', otherClass: '_1' }
 
-Stylesheet.load()
+loadIntoDOM(StyleSheet)
 ```
 
-This creates this stylesheet in the browser
+This creates this stylesheet in the browser. The identifiers will be different though!
 
 ```css
 ._0:hover {
@@ -53,4 +55,21 @@ This creates this stylesheet in the browser
 ._1 {
   margin: '.5rem'
 }
+```
+
+## Usage with React
+
+Relye provides a nice helper to use with React
+
+```js
+import React, { Component } from 'react'
+import { applyStyles } from 'relye/react'
+
+class MyComponent extends Component {
+  // ...
+}
+
+applyStyles({
+  // ...
+})(MyComponent)
 ```
