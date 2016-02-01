@@ -1,6 +1,6 @@
-# Stylesheet
+# :sunny: Reyle :sunny:
 
-Styling for Javascript!
+Styling for Javascript
 
 ### Main differences to other solutions
 - All javascript
