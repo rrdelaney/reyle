@@ -36,7 +36,7 @@ export class StyleSheet {
             addRules(rules[rule], `${prefix} .${newClassName}`, postfix)
           }
         } else if (rule === '@import') {
-          Stylesheet.rules.unshift({ rule: `@import ${rules[rule]}` })
+          StyleSheet.rules.unshift({ rule: `@import ${rules[rule]}` })
         } else {
           instanceRules[rule] = rules[rule]
         }
@@ -48,14 +48,14 @@ export class StyleSheet {
           .map(rule => `  ${hyphenate(rule)}: ${prefixed[rule]};`)
           .join('\n')
 
-        Stylesheet.rules.push({ component: identifier, rule: `${prefix} {\n${instanceStyleSheet}\n}${postfix}` })
+        StyleSheet.rules.push({ component: identifier, rule: `${prefix} {\n${instanceStyleSheet}\n}${postfix}` })
       }
     }
 
     addRules(rules)
 
     if (identifier) {
-      Stylesheet.components.push(identifier)
+      StyleSheet.components.push(identifier)
     }
 
     return instanceClasses
@@ -63,8 +63,8 @@ export class StyleSheet {
 
   static getCSS () {
     return {
-      css: Stylesheet.rules.map(s => s.rule).join('\n'),
-      components: Stylesheet.components.join('+')
+      css: StyleSheet.rules.map(s => s.rule).join('\n'),
+      components: StyleSheet.components.join('+')
     }
   }
 }

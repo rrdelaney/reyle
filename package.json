@@ -3,13 +3,18 @@
   "version": "0.0.0",
   "description": "Managing styles in style",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "inline-style-prefixer": "^0.6.7"
+  },
   "devDependencies": {
     "babel-cli": "^6.4.5",
+    "babel-eslint": "^4.1.7",
     "babel-preset-es2015": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13"
+    "babel-preset-stage-0": "^6.3.13",
+    "standard": "^5.4.1"
   },
   "scripts": {
+    "test": "standard",
     "build": "babel src -d target",
     "prepublish": "babel src -d ."
   },
@@ -27,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/rrdelaney/relye/issues"
   },
-  "homepage": "https://github.com/rrdelaney/relye"
+  "homepage": "https://github.com/rrdelaney/relye",
+  "standard": {
+    "parser": "babel-eslint"
+  }
 }

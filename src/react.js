@@ -1,5 +1,5 @@
 import { StyleSheet } from './StyleSheet'
-import { loadIntoDOM, removeFromDOM } from './dom'
+import { loadIntoDOM, removeStyles } from './dom'
 
 export function applyStyles (styles) {
   return component => {
