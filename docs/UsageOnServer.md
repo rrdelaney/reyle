@@ -35,7 +35,7 @@ app.get('/reyle.styles.css', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.write(```
+  res.write(`
 <html>
   <head>
     <link
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
   <body>
     <!-- .... -->
   </body>
-</html>```)
+</html>`)
 })
 ```
 
