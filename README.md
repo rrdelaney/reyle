@@ -1,5 +1,4 @@
-# :sunny: Reyle :sunny:
-[![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle)
+# :sunny: Reyle :sunny: [![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle)
 
 Styling for Javascript
 
