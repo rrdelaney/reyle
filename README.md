@@ -1,4 +1,5 @@
 # :sunny: Reyle :sunny:
+[![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle)
 
 Styling for Javascript
 
@@ -8,7 +9,7 @@ Styling for Javascript
 - Built in HMR
 - Autoprefixing
 - Nested selectors
-- 
+-
 ## How to use
 
 ```js
