@@ -1,5 +1,5 @@
-import { StyleSheet } from './StyleSheet'
-import { loadIntoDOM, removeStyles } from './dom'
+import { StyleSheet } from './index'
+import { loadIntoDOM, removeFromDOM } from './dom'
 
 export function applyStyles (styles) {
   return component => {
@@ -11,8 +11,8 @@ export function applyStyles (styles) {
 
     if (module && module.hot) {
       module.hot.accept()
-      removeStyles(StyleSheet)
-      loadIntoDOM(StyleSheet)
+      removeFromDOM()
+      loadIntoDOM()
     }
   }
 }

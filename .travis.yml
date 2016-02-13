@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+    - stable
+
+deploy:
+    provider: npm
+    email: "rrdelaney@outlook.com"
+    api_key: $NPM_TOKEN
+    skip_cleanup: true
+    on:
+        branch: master
+        condition: $(npm view reyle dist-tags.latest) != $(node -p "require('./package.json').version")

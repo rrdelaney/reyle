@@ -1,4 +1,6 @@
-export function loadIntoDOM (StyleSheet) {
+import { StyleSheet } from './StyleSheet'
+
+export function loadIntoDOM () {
   let newStyle = document.createElement('style')
   newStyle.setAttribute('data-reyle', 'dynamic')
 
