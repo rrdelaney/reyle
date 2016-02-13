@@ -2,15 +2,6 @@
 
 Styling for Javascript
 
-### Main differences to other solutions
-- Uses real CSS, either injected or preloaded
-- Works with React, both on server and client
-- Built in HMR
-- Autoprefixing
-- Nested selectors
-
-## Demo
-
 ```js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
@@ -34,6 +25,13 @@ class Example extends Component {
 Reyle.loadIntoDOM()
 ReactDOM.render(<Example />, document.getElementById('root'))
 ```
+
+### Main differences to other solutions
+- Uses real CSS, either injected or preloaded
+- Works with React, both on server and client
+- Built in HMR
+- Autoprefixing
+- Nested selectors
 
 ## How does it work?
 Reyle takes each stylesheet you create and transforms it into pure CSS. The CSS can be exported,
