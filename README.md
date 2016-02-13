@@ -1,10 +1,9 @@
 # :sunny: Reyle :sunny: [![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle) [![npm version](https://badge.fury.io/js/reyle.svg)](https://www.npmjs.com/package/reyle)
 
 StyleSheet management in Javascript
-
-[API](https://github.com/rrdelaney/reyle/tree/master/docs/API.md) |
-[Docs](https://github.com/rrdelaney/reyle/tree/master/docs) |
-[Examples] (https://github.com/rrdelaney/reyle/tree/master/examples)
+| [API](https://github.com/rrdelaney/reyle/tree/master/docs/API.md)
+| [Docs](https://github.com/rrdelaney/reyle/tree/master/docs)
+| [Examples](https://github.com/rrdelaney/reyle/tree/master/examples)
 
 ```js
 import React, { Component } from 'react'
