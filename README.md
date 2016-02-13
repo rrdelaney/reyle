@@ -3,13 +3,12 @@
 Styling for Javascript
 
 ### Main differences to other solutions
-- All javascript
-- Autoprefixing
-- Chained selectors
 - Uses real CSS, either injected or preloaded
 - Works with React, both on server and client
 - Built in HMR
-
+- Autoprefixing
+- Nested selectors
+- 
 ## How to use
 
 ```js
@@ -26,7 +25,7 @@ const styles = Stylesheet.create({
   },
   otherClass: {
     margin: '.5rem',
-    '%input': {
+    '#input': {
       outline: 'none'
     }
   }
