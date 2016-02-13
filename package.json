@@ -20,7 +20,7 @@
     "build": "babel src -d target",
     "deploy": "babel src -d .",
     "predist": "mkdir -p dist",
-    "dist": "browserify src/index.js -t babelify | uglifyjs -c > dist/reyle.js"
+    "dist": "browserify src/index.js --standalone Reyle -t babelify | uglifyjs -c > dist/reyle.js"
   },
   "repository": {
     "type": "git",
