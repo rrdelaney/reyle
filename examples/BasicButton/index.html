@@ -1,20 +1,33 @@
 <!doctype html>
 <html>
   <body>
-    <div class="button"></div>
+    <div id="root"></div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://npmcdn.com/reyle/dist/reyle.js"></script>
     <script>
-      Reyle.StyleSheet.create({
+      // Create the stylesheet and save the new style names
+      var styles = Reyle.StyleSheet.create({
         button: {
-          border: '5px solid black',
-          borderRadius: '5px',
           backgroundColor: 'rebeccapurple',
-          color: 'white'
-        }
-      })
+          border: '5px solid rebeccapurple',
+          borderRadius: '5px',
+          color: 'white',
+          transition: 'background-color 1s, border-color 1s',
 
-      Reyle.loadIntoDOM()
+          // This applies the :hover selector to the parent selector
+          ':hover': {
+            backgroundColor: 'black',
+            borderColor: 'black'
+          }
+        }
+      });
+
+      // Append the new <span> to the root element, using the stylename from before
+      $('#root').append($(`<span class="${styles.button}">Hello!</span>`));
+
+      // Load the stylesheet into the DOM
+      Reyle.loadIntoDOM();
     </script>
   </body>
 </html>
