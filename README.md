@@ -40,7 +40,14 @@ setting. Reyle is also smart about what it can render on the server to try to mi
 CSS. By using identifiers with each stylesheet, Reyle can trace what styles are loaded. This is
 built into the React helper.
 
+Reyle works with universal React applications very well. It can inject styles into the server-rendered payload
+so no JS is needed to style elements at first. After all libraries are loaded, Reyle can pick up where it left off
+if new styles need to be applied. For an example of this, see [UsageWithIsomorphicReact.md](https://github.com/rrdelaney/reyle/blob/master/docs/UsageWithIsomorphicReact.md).
+
 ## How to use
+
+Install the library with `npm i -S reyle`. Using a bundler/loader such as webpack or browserify is recommended.
+Otherwise a UMD build is available from npmcdn at `https://npmcdn.com/reyle@0.0.5/dist/reyle.js`.
 
 ```js
 import Reyle, { StyleSheet } from 'reyle'
@@ -89,7 +96,11 @@ This creates this stylesheet in the browser. The identifiers will be different t
 
 ## Usage with React
 
-Reyle provides a nice helper to use with React
+Reyle provides a nice helper to use with React. By using the wrapper with your components,
+you get universal rendering build in. This is because the wrapper assigns each of your components
+a unique id that Reyle can identify on the server or client, so it knows not to reapply that
+components styles. Server-side rendering isn't necessary to use the React wrapper, but if you ever
+switch it adds a lot of benefits.
 
 ```js
 import React, { Component } from 'react'
