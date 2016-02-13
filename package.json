@@ -16,7 +16,7 @@
   "scripts": {
     "test": "standard",
     "build": "babel src -d target",
-    "prepublish": "babel src -d ."
+    "deploy": "babel src -d ."
   },
   "repository": {
     "type": "git",
