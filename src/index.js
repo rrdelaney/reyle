@@ -10,11 +10,11 @@ function uuid () {
   })
 }
 
-export class StyleSheet {
-  static rules = [];
-  static components = [];
+export const StyleSheet = {
+  rules: [],
+  components: [],
 
-  static create (rules, identifier = '') {
+  create (rules, identifier = '') {
     let instanceClasses = {}
 
     const hyphenate = name => name
@@ -68,9 +68,9 @@ export class StyleSheet {
     }
 
     return instanceClasses
-  }
+  },
 
-  static getCSS () {
+  getCSS () {
     return {
       css: StyleSheet.rules.map(s => s.rule).join('\n'),
       components: StyleSheet.components.join('+')

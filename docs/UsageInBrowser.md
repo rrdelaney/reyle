@@ -7,7 +7,9 @@ example, given the HTML file and these scripts:
 <html>
   <body>
     <div id="root"></div>
-    <script src="reyle.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://npmcdn.com/reyle/dist/reyle.js"></script>
     <script src="button.js"></script>
   </body>
 </html>
@@ -15,6 +17,7 @@ example, given the HTML file and these scripts:
 
 ```js
 // button.js
+
 var styles = Stylesheet.create({
   button: {
     backgroundColor: 'blue',
@@ -22,10 +25,7 @@ var styles = Stylesheet.create({
   }
 })
 
-document
-  .getElementById('.root')
-  .classList
-  .append(styles.button)
+$('#root').append($(`<div class="${styles.button}">Button</div>`))
 ```
 
-No UMD build exists yet, but there should be one soon!
+You can find the latest UMD build at npmcdn

@@ -1,6 +1,6 @@
 {
   "name": "reyle",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Managing styles in style",
   "main": "index.js",
   "dependencies": {
