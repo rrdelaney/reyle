@@ -11,12 +11,16 @@
     "babel-eslint": "^4.1.7",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
     "standard": "^5.4.1"
   },
   "scripts": {
     "test": "standard",
     "build": "babel src -d target",
-    "deploy": "babel src -d ."
+    "deploy": "babel src -d .",
+    "predist": "mkdir -p dist",
+    "dist": "browserify src/index.js -t babelify | uglifyjs -c > dist/reyle.js"
   },
   "repository": {
     "type": "git",
