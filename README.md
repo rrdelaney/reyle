@@ -8,7 +8,33 @@ Styling for Javascript
 - Built in HMR
 - Autoprefixing
 - Nested selectors
--
+
+## Demo
+
+```js
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import Reyle, { StyleSheet } from 'reyle'
+
+class Example extends Component {
+  render () {
+    return <div className={this.styles.example}>
+      Hello!
+    </div>
+  }
+}
+
+Reyle.applyStyles({
+  example: {
+    color: 'white',
+    backgroundColor: 'blue'
+  }
+})(Example)
+
+Reyle.loadIntoDOM()
+ReactDOM.render(<Example />, document.getElementById('root'))
+```
+
 ## How to use
 
 ```js
