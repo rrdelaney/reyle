@@ -12,8 +12,7 @@ Styling for Javascript
 ## How to use
 
 ```js
-import { StyleSheet } from 'reyle'
-import { loadIntoDOM } from 'reyle/dom'
+import Reyle, { StyleSheet } from 'reyle'
 
 const styles = Stylesheet.create({
   myClass: {
@@ -33,7 +32,7 @@ const styles = Stylesheet.create({
 
 console.log(styles) // { myClass: '_0', otherClass: '_1' }
 
-loadIntoDOM(StyleSheet)
+Reyle.loadIntoDOM()
 ```
 
 This creates this stylesheet in the browser. The identifiers will be different though!
@@ -63,7 +62,7 @@ Reyle provides a nice helper to use with React
 
 ```js
 import React, { Component } from 'react'
-import { applyStyles } from 'reyle/react'
+import { applyStyles } from 'reyle'
 
 class MyComponent extends Component {
   // ...

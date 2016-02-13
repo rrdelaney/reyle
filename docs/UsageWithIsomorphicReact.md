@@ -43,11 +43,9 @@ app.listen(APP_PORT, 'localhost', err => {
 // client.js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { StyleSheet } from 'reyle'
-import { loadIntoDOM } from 'reyle/dom'
+import Reyle, { StyleSheet } from 'reyle'
 import Example from './components/Example'
 
-loadIntoDOM(StyleSheet)
-
+Reyle.loadIntoDOM(StyleSheet)
 ReactDOM.render(<Example />, document.getElementById('root'))
 ```

@@ -1,5 +1,14 @@
 import Prefixer from 'inline-style-prefixer'
-import { uuid } from './uitls/uuid'
+
+function uuid () {
+  let d = new Date().getTime()
+
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    let r = (d + Math.random() * 16) % 16 | 0
+    d = Math.floor(d / 16)
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
+  })
+}
 
 export class StyleSheet {
   static rules = [];
@@ -65,6 +74,46 @@ export class StyleSheet {
     return {
       css: StyleSheet.rules.map(s => s.rule).join('\n'),
       components: StyleSheet.components.join('+')
+    }
+  }
+}
+
+export function loadIntoDOM () {
+  let newStyle = document.createElement('style')
+  newStyle.setAttribute('data-reyle', 'dynamic')
+
+  const preloadedStylesheet = Array.from(document.styleSheets)
+    .filter(sheet => sheet.ownerNode.getAttribute('data-reyle') === 'static')[0]
+
+  if (preloadedStylesheet) {
+    const preloadedComponents = preloadedStylesheet.ownerNode.getAttribute('data-components').split('+')
+    const unloadedComponents = StyleSheet.rules.filter(style => !preloadedComponents.includes(style.component))
+    newStyle.innerHTML = unloadedComponents.map(s => s.rule).join('\n')
+  } else {
+    newStyle.innerHTML = StyleSheet.getCSS().css
+  }
+
+  document.head.appendChild(newStyle)
+}
+
+export function removeFromDOM () {
+  Array.from(document.styleSheets)
+    .filter(sheet => sheet.ownerNode.getAttribute('data-reyle') === 'dynamic')
+    .forEach(sheet => sheet.disabled = true)
+}
+
+export function applyStyles (styles) {
+  return component => {
+    const identifier = component.name || '_' + Object.keys(styles).join('_')
+    const classNames = StyleSheet.create(styles, identifier)
+
+    component.styles = classNames
+    component.prototype.styles = classNames
+
+    if (module && module.hot) {
+      module.hot.accept()
+      removeFromDOM()
+      loadIntoDOM()
     }
   }
 }

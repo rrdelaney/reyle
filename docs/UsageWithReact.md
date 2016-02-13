@@ -7,7 +7,7 @@ Basic usage is:
 
 ```js
 import React, { Component } from 'react'
-import { applyStyles } from 'reyle/react'
+import { applyStyles } from 'reyle'
 
 export class Button extends Component {
   render () {
@@ -32,7 +32,7 @@ This also works with Stateless Functional Components:
 
 ```js
 import React from 'react'
-import { applyStyles } from 'reyle/react'
+import { applyStyles } from 'reyle'
 
 export function Button () {
   return <button className={this.styles.button}>
