@@ -1,6 +1,6 @@
-# :sunny: Reyle :sunny: [![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle)
+# :sunny: Reyle :sunny: [![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle) [![npm version](https://badge.fury.io/js/reyle.svg)](https://www.npmjs.com/package/reyle)
 
-Styling for Javascript
+StyleSheet management in Javascript | [Docs](https://github.com/rrdelaney/reyle/tree/master/docs)
 
 ```js
 import React, { Component } from 'react'
