@@ -1,23 +1,26 @@
 {
   "name": "reyle",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Managing styles in style",
   "main": "index.js",
   "dependencies": {
     "inline-style-prefixer": "^0.6.7"
   },
   "devDependencies": {
+    "ava": "^0.11.0",
     "babel-cli": "^6.4.5",
     "babel-eslint": "^4.1.7",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "snazzy": "^2.0.1",
     "standard": "^5.4.1"
   },
   "scripts": {
-    "test": "standard",
-    "build": "babel src -d target",
+    "pretest": "npm run build",
+    "test": "standard | snazzy && ava",
+    "build": "babel src -d reyle",
     "deploy": "babel src -d .",
     "predist": "mkdir -p dist",
     "dist": "browserify src/index.js --standalone Reyle -t babelify | uglifyjs -c > dist/reyle.js"

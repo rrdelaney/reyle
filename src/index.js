@@ -1,5 +1,9 @@
 import Prefixer from 'inline-style-prefixer'
 
+let DEBUG = {
+  mangle: true
+}
+
 function uuid () {
   let d = new Date().getTime()
 
@@ -37,7 +41,9 @@ export const StyleSheet = {
           } else if (rule[0] === '%') {
             addRules(rules[rule], `${prefix} ${rule.substr(1)}`, postfix)
           } else {
-            const newClassName = identifier
+            const newClassName = !DEBUG.mangle
+              ? rule
+              : identifier
               ? '_' + identifier + '_' + rule
               : '_' + uuid()
 
@@ -75,10 +81,15 @@ export const StyleSheet = {
       css: StyleSheet.rules.map(s => s.rule).join('\n'),
       components: StyleSheet.components.join('+')
     }
+  },
+
+  destroy () {
+    StyleSheet.rules = []
+    StyleSheet.components = []
   }
 }
 
-export function loadIntoDOM () {
+function loadIntoDOM () {
   let newStyle = document.createElement('style')
   newStyle.setAttribute('data-reyle', 'dynamic')
 
@@ -96,13 +107,13 @@ export function loadIntoDOM () {
   document.head.appendChild(newStyle)
 }
 
-export function removeFromDOM () {
+function removeFromDOM () {
   Array.from(document.styleSheets)
     .filter(sheet => sheet.ownerNode.getAttribute('data-reyle') === 'dynamic')
     .forEach(sheet => sheet.disabled = true)
 }
 
-export function applyStyles (styles) {
+function applyStyles (styles) {
   return component => {
     const identifier = component.name || '_' + Object.keys(styles).join('_')
     const classNames = StyleSheet.create(styles, identifier)
@@ -116,4 +127,12 @@ export function applyStyles (styles) {
       loadIntoDOM()
     }
   }
+}
+
+export default {
+  DEBUG,
+  loadIntoDOM,
+  removeFromDOM,
+  applyStyles,
+  StyleSheet
 }

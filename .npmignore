@@ -2,3 +2,5 @@ src/
 examples/
 .babelrc
 .gitignore
+test.js
+reyle/
