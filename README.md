@@ -55,7 +55,7 @@ if new styles need to be applied. For an example of this, see [UsageWithIsomorph
 ## How to use
 
 Install the library with `npm i -S reyle`. Using a bundler/loader such as webpack or browserify is recommended.
-Otherwise a UMD build is available from npmcdn at `https://npmcdn.com/reyle@0.0.5/dist/reyle.js`.
+Otherwise a UMD build is available from npmcdn at `https://npmcdn.com/reyle/dist/reyle.js`.
 
 ```js
 import Reyle, { StyleSheet } from 'reyle'
