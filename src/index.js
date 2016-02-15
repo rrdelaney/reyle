@@ -89,7 +89,7 @@ export const StyleSheet = {
   }
 }
 
-function loadIntoDOM () {
+export function loadIntoDOM () {
   let newStyle = document.createElement('style')
   newStyle.setAttribute('data-reyle', 'dynamic')
 
@@ -107,13 +107,13 @@ function loadIntoDOM () {
   document.head.appendChild(newStyle)
 }
 
-function removeFromDOM () {
+export function removeFromDOM () {
   Array.from(document.styleSheets)
     .filter(sheet => sheet.ownerNode.getAttribute('data-reyle') === 'dynamic')
     .forEach(sheet => sheet.disabled = true)
 }
 
-function applyStyles (styles) {
+export function applyStyles (styles) {
   return component => {
     const identifier = component.name || '_' + Object.keys(styles).join('_')
     const classNames = StyleSheet.create(styles, identifier)
