@@ -9,7 +9,7 @@ example, given the HTML file and these scripts:
     <div id="root"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://npmcdn.com/reyle/dist/reyle.js"></script>
+    <script src="https://unpkg.com/reyle/dist/reyle.js"></script>
     <script src="button.js"></script>
   </body>
 </html>
@@ -28,4 +28,4 @@ var styles = Stylesheet.create({
 $('#root').append($(`<div class="${styles.button}">Button</div>`))
 ```
 
-You can find the latest UMD build at npmcdn
+You can find the latest UMD build at unpkg
