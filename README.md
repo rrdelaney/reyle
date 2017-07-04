@@ -1,4 +1,4 @@
-# :sunny: Reyle :sunny: [![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle) [![npm version](https://badge.fury.io/js/reyle.svg)](https://www.npmjs.com/package/reyle)
+# :sunny: Reyle :sunny: [![Build Status](https://travis-ci.org/rrdelaney/reyle.svg?branch=master)](https://travis-ci.org/rrdelaney/reyle) [![npm version](https://badge.fury.io/js/reyle.svg)](https://www.npmjs.com/package/reyle) [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 StyleSheet management in Javascript
 | [API](https://github.com/rrdelaney/reyle/tree/master/docs/API.md)
